@@ -1,0 +1,20 @@
+[
+    {
+        "name": "green",
+        "properties": [
+            {
+                "background-color": "bg"
+            },
+            {
+                "border-color": "border"
+            },
+            {
+                "color": "color"
+            },
+            {
+                "outline-color": "out"
+            }
+        ],
+        "command": "#5f0 ^ 50 / 10"
+    }
+]

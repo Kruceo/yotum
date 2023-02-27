@@ -89,6 +89,13 @@ const cmd = `${c} ${f} ${v} / ${d}`
 * ***Division -*** It's the number of colors that will be generated.
 
 <br><br>
+
+### Functions:
+
+```js
+additive = '^' // additive(color1,value,division)
+diffBetween = '~' // diffBetween(color1,color2,division) 
+```
 ## Other ways to use
 
 ### With js array:

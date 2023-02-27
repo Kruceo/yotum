@@ -1,19 +1,5 @@
-import gen from './src/genColors.mjs'
+import additive from './src/additive.mjs';
+import { matrixToHex } from './src/lib/matrix.mjs';
 
-let divisions = 9
-let addition = 50
-
-
-let blue = {
-    "command": "#00f ^ "+addition+" / " + divisions
-}
-let green = {
-    "command": "#0f0 ^ 50 / 9"
-}
-let red = {
-    "command": "#f50 ^ 50 / 9"
-}
-const config = [red,green,blue]
-
-console.log(gen(config))
-
+const red = additive('ff0',40,5).map(each=>{return matrixToHex(each)})
+console.log(red)

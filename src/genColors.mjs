@@ -1,5 +1,5 @@
 import additive from './additive.mjs'
-import { diffBetween } from './differenceBetween.mjs'
+import diffBetween from './differenceBetween.mjs'
 import { matrixToHex } from './lib/matrix.mjs'
 
 export default  function gen(obj) {
@@ -11,7 +11,7 @@ export default  function gen(obj) {
     file.forEach((each,index) => {
         
         const out = each.out??'hex'
-        const value = each.name ?? 'color' + index
+        const value = each.name ?? index
         const division = each.command.split('/')[1]
         const startend = each.command.split('/')[0].split(/~|\^/)
         const signal = (() => {

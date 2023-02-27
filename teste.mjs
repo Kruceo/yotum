@@ -9,10 +9,11 @@ colors.map(each=>{
     div.id = each
     document.body.appendChild(div)
 })
-let rot = 200
+let rot = 360
 setInterval(() => {
-    
-    let ll = hue('#f00',rot)
+    console.log()
+    let ll = hue('#800',document.querySelector('input').value)
+    document.querySelector('h2').innerText = document.querySelector('input').value
     ll.forEach((each,index)=>{
         let c = ['red','green','blue']
         const div = document.querySelector('#'+colors[index])
@@ -25,7 +26,7 @@ setInterval(() => {
     document.querySelector('#a').innerHTML = 'A'
     document.querySelector('#a').style.background = 'rgb(' + ll.toString() + ')'
     
-    rot += 5
+    rot += 0
     if(rot > 360)rot = 0
 
-}, 1000/10);
+}, 1000/15);

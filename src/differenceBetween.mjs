@@ -25,7 +25,7 @@ export function diffBetween(color1, color2,division) {
 
 
 
-        results.push(matrixToHex(result))
+        results.push((result))
         // console.log(parseInt(value,16))
 
     }

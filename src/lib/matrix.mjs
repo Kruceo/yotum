@@ -3,7 +3,7 @@ export function getMatrix(hexColor) {
     let rgb = ['', '', '']
     rgb.forEach((each, index) => {
         let value = hexColor.slice(index * divisor, (1 + index) * (divisor))
-        value = value.padEnd(2,0)
+        value = value.padEnd(2,value)
         rgb[index] = parseInt(value, 16)
     })
     return rgb

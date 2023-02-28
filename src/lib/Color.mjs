@@ -9,7 +9,8 @@ export default class Color{
         else this.rgb = color
     }
     get hex(){
-        return matrixToHex(this.rgb)
+        
+        return matrixToHex([...this.rgb])
     }
     get () {
         return this.h

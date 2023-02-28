@@ -21,8 +21,11 @@ export function hexToMatrix(hexColor=String) {
 }
 
 export function matrixToHex(matrix=Array){
-    let newMatrix = matrix
-    newMatrix[3] *=255
+    
+    let newMatrix = [parseInt(matrix[0]),parseInt(matrix[1]),parseInt(matrix[2]),matrix[3]]
+   
+    newMatrix[3] *= 255
+    newMatrix[3] = parseInt(newMatrix[3])
     let result = newMatrix.reduce((acum,next)=>{
         return acum+''+next.toString(16).padStart(2, 0)
     },'')

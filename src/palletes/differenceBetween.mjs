@@ -1,4 +1,4 @@
-import { getMatrix, matrixToHex } from "./lib/matrix.mjs"
+import { hexToMatrix, matrixToHex } from "../lib/matrix.mjs"
 
 export default function diffBetween(color1, color2,division) {
     let results = []

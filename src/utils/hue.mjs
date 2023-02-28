@@ -1,8 +1,9 @@
-import { getMatrix } from "./lib/matrix.mjs"
+import Color from "../lib/Color.mjs"
+import { hexToMatrix } from "../lib/matrix.mjs"
 
-export default function hue(color, rot) {
-    const original = color.replaceAll('#', '')
-    let rgb = getMatrix(original)
+export default function hue(color=Color, rot=Number) {
+    
+    let rgb = color.rgb
     let result = [0, 0, 0]
     
 
@@ -30,5 +31,5 @@ export default function hue(color, rot) {
     result[1] = addRGB[1]
     result[2] = addRGB[2]
 
-    return result
+    return new Color(result)
 }

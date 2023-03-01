@@ -1,23 +1,19 @@
 import Color from "./src/lib/Color.mjs";
-import brightness from "./src/utils/bright.mjs";
+import { square } from "./src/palletes/square.mjs";
 import hue from "./src/utils/hue.mjs";
 
-let red = new Color('#08f5')
-let blue= new Color('#01f5')
-console.log(red.hex,red.rgb)
-console.log(red.hex,blue.rgb)
-for (let i = 1; i < 2; i++) {
-    const element = document.createElement('div')
-    
-    const c = brightness(red, i* 120)
-    console.log(c.hexAplha)
-    const h = hue(c,i*20)
-    console.log(h.hexAplha)
-    element.style.background = "rgb(" + h.rgba+")"
-    document.body.appendChild(element)
+let c = new Color('#F00')
+let slider = document.createElement('input')
+let mess = document.createElement('h2')
+slider.type = 'range'
+document.body.appendChild(slider)
+document.body.appendChild(mess)
+slider.max = 360
+slider.addEventListener('change',(e)=>{
+   
+})
 
-    element.innerText = h.rgba + '  |  ' + h.hexAplha
-    element.style.width = '100%'
-    element.style.height = '100px'
-    element.style.border = 'solid black 1px'
-}
+setInterval(() => {
+    let hues = hue(c,slider.value)
+    mess.innerHTML = hues.hex + '  ' + slider.value
+}, 250);

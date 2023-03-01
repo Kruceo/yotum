@@ -12,7 +12,6 @@ export default class Color {
             
             this.rgba = hexToMatrix(color.replaceAll('#', ''))
         }
-        console.log('$$$ '+this.hexAplha)
     }
     get hex() {
 

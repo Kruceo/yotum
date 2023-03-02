@@ -1,4 +1,4 @@
-import Color from "../lib/Color.mjs";
+import Color from "../../lib/Color.mjs";
 
 export default function getHue(color = Color.prototype || Array) {
     const [red, green, blue] = color.rgb
@@ -14,6 +14,7 @@ export default function getHue(color = Color.prototype || Array) {
     else hue = 4 + (red - green) / diff
 
     hue *= 60
-
+    if(hue<0)hue+= 360
+    hue =  Math.round(hue)
     return hue
 }

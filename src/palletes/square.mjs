@@ -1,6 +1,6 @@
 import Color from "../lib/Color.mjs";
 import brightness from "../utils/bright.mjs";
-import hue from "../utils/hue.mjs";
+import hue from "../utils/hsb/hue.mjs";
 
 export function square(baseColor=Color.prototype,rotation=Number){
     let result = []

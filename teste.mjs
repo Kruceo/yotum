@@ -1,28 +1,30 @@
 import Color from "./src/lib/Color.mjs";
 import { square } from "./src/palletes/square.mjs";
-import hue from "./src/utils/hue.mjs";
+import hue from "./src/utils/hsb/hue.mjs";
 
-let c = new Color('#8f0')
+let c = new Color('#FF0000')
 let slider = document.createElement('input')
 let mess = document.createElement('h2')
+mess.style.color = 'white'
 let css = document.querySelector('#huecss')
 css.style.background = "#"+c.hex
 slider.type = 'range'
 document.body.appendChild(slider)
 document.body.appendChild(mess)
 slider.max = 360
-slider.style.width = 1000 + 'px'
+slider.value = 0
+slider.style.width =  100+ '%'
 slider.addEventListener('change',(e)=>{
    
 })
-slider.value = 180
+slider.value = 0
 
 setInterval(() => {
     let hues = hue(c,slider.value)
     mess.innerHTML = hues.hex + '  ' + slider.value+"  "+ ((slider.value * 1.666666) / 100)
     mess.style.background = '#' + hues.hex 
     css.style.filter = "hue-rotate("+slider.value + "deg)"
-}, 1000/10);
+}, 1000/15);
 
 
 square(c,0).forEach(each=>{

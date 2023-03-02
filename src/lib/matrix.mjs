@@ -19,7 +19,7 @@ export function hexToMatrix(hexColor=String) {
 }
 
 export function matrixToHex(matrix=Array){
-    console.log(matrix)
+   
     let newMatrix = [parseInt(matrix[0]),parseInt(matrix[1]),parseInt(matrix[2]),matrix[3]??1]
    
     newMatrix[3] *= 255

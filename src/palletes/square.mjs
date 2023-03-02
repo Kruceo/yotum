@@ -6,20 +6,13 @@ export function square(baseColor=Color.prototype,rotation=Number){
     let result = []
     const color = baseColor
     
-    let values = [53,147,230,0]
+    let values = [64,150,266,0]
     for (let i = 0; i < 4; i++) {
     
-        const hued = brightness(hue(color,45*(i+10.5) ),100)// 147   230    
-        // result.push(hued)
+        const hued = brightness(hue(color,values[i] ),100)// 147   230    
+         result.push(hued)
     }
 
-    for (let i = 0;i <360 ;i++) {
-        
-        const hued = brightness(hue(color,i),100)// 147   230 
-        if(hued.hex ){
-            result.push(hued)
-           
-        }
-    }
+    
     return result
 }

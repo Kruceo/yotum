@@ -50,6 +50,32 @@ output:
 ```
 <br><br>
 
+## **Color Class**
+
+### Input
+The constructor accepts hex and rgb, both with alpha support.
+
+### Internal color systems
+* RGB
+* RGBA
+* Hex
+* HexAlpha
+* HSB
+
+```js
+const color = new Color('f00f')
+
+console.log(color.rgb) // return [255,0,0]
+console.log(color.rgba) // return [255,0,0,1]
+
+console.log(color.hex) //return "f00"
+console.log(color.hexAlpha) //return "f00f"
+
+console.log(color.hsb)  //return { hue:0, brightness:100, saturation:100 }
+console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha:100 }
+```
+
+<br><br>
 ## **Mixing**
 
 ### Brightness
@@ -57,26 +83,35 @@ output:
 
 ```js
   const color = new Color('#ff8252')
-  const darker = brightness(color,50) //50% of total bright
+  const darker = brightness(color,50) // => Color with 50% of original bright
 ```
+
 
 ### Saturate
 
 
 ```js
   const color = new Color('#ff8252')
-  const darker = saturate(color,50) //50% of saturation
+  const darker = saturate(color,50) //Color with 50% of original saturation
+```
+
+### Hue rotation
+
+
+```js
+  const color = new Color('#ff8252')
+  const darker = hue(color,130) //Color with 130° addition to hue rotation
 ```
 <br><br>
 
 ## **Palletes**
 
-### Additive [Comming soon]
+### Additive
 
 
 ```js
   const color = new Color('#ff8252')
-  const pallete = additive(color,30,10) // => [...Color x 10]
+  const pallete = additive(color,25,5) // => [Color x 5]
 ```
 
 ### Difference Between [Comming soon]
@@ -85,17 +120,18 @@ output:
 ```js
   const color1 = new Color('#ff8252')
   const color2 = new Color('#0022ff')
-  const pallete = diffBetween(color1,color2,10) // => [...Color x 10]
+  const pallete = diffBetween(color1,color2,10) // => [Color x 10]
 ```
 
-### ***Square:***
+### Square
 
 
 ```js
   const color = new Color('#ff8252')
-  
-  const pallete = square(color1,50) // => [...Color x 4]
+  const pallete = square(color1,8) // => [Color x 8]
 ```
+
+
 <br><br>
 ## Author
 Visit Kruceo website for more projects: <a href='https://home.kruceo.com'>home.kruceo.com

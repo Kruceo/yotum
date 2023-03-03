@@ -11,17 +11,17 @@ let saturationPoiter = pointer.querySelector('p')
 let pointers = []
 
 let img = document.querySelector('img')
-let c = new Color('#f0f')
+let c = new Color('#00f')
 img.style.filter = "brightness("+ c.hsb.brightness+'%)'
 
-additive(c,40,5).forEach(each => {
+additive(c,40,10).forEach(each => {
     console.log(each)
     let np = pointer.cloneNode(true)
     let sp = np.querySelector('#saturation')
     pointers.push(np)
     wheelframe.appendChild(np)
     np.style.top = img.clientHeight / 2 - 35 + 'px'
-    np.style.left = img.clientWidth / 2 - 22 + 'px'
+    np.style.left = img.clientWidth / 2-10 + 'px'
     sp.style.left =
         (((img.clientWidth / 2) * each.hsb.saturation) / 100) + 'px'
     

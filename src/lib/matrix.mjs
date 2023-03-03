@@ -39,6 +39,7 @@ export function matrixCorrector(matrix){
 
     newMatrix = newMatrix.map(each=>{
         if(each > 255) return 255
+        if(each < 0) return 0
         return each
     })
     return newMatrix

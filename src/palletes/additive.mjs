@@ -24,5 +24,7 @@ export default function additive(color=Color,add,times){
        
         results.push(new Color(result))
     }
+
+    console.log(results)
     return results
 }

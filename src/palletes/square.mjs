@@ -1,5 +1,5 @@
 import Color from "../lib/Color.mjs";
-import brightness from "../utils/bright.mjs";
+import brightness from "../utils/brightness.mjs";
 import {binToDec, decToBin, inverseBin} from "../utils/binaries.mjs";
 import getHue from "../utils/hsb/getHue.mjs";
 import hue from "../utils/hsb/hue.mjs";

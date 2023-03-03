@@ -1,6 +1,6 @@
 import Color from "../../lib/Color.mjs"
 import { hexToMatrix } from "../../lib/matrix.mjs"
-import brightness from "../bright.mjs"
+import brightness from "../brightness.mjs"
 import getHue from "./getHue.mjs"
 import saturate from "../saturate.mjs"
 import getbrightness from "./getBrightness.mjs"

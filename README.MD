@@ -29,112 +29,72 @@ npm install -g kruceo/yotum
 <br><br>
 ## Getting started
 
-Using directly js:
+### Creating color
 
 ```js
-import gen from 'yotum/src/genColor.mjs';
+import Color from 'yotum'
 
-const green = { command:"#0f0 ^ 50 / 9" };
+const red = new Color('#f00')
+const green = new Color('#0f08') //with alpha
+const blue = new Color([0,0,255]) // with RGB
 
-console.log(gen(green));
+console.log(red.rgb)
+console.log(green.rgba)
+console.log(blue.hex)
 ```
 output:
-```json
-{
-  '0': [
-    'c8ffc8', '96ff96',
-    '64ff64', '32ff32',
-    '00ff00', '00cd00',
-    '009b00', '006900',
-    '003700'
-  ]
-}
+```js
+[255,0,0]
+[0,255,0,0.5]
+#0000ff
 ```
 <br><br>
 
-## Understanding a collection
+## Filters
 
-### Object:
+### Brightness
 
-```js
-const green = {
-    name:green,
-    command: '#21f092 ^ 50 / 9',
-    out:"rgb"
-    }
-```
-
-* ***Name -*** It's the object name that the array use, can be used to generate CSS tokens.
-* ***Command -*** It's the instrunction to generator.
-* ***Out-*** It's the output format [ rgb | hex ].
-
-### Command:
 
 ```js
-const c = '#4f1' //base color
-const f = '^'    //function
-const v = 50     //second value
-const d = 9      //divisions
-
-const cmd = `${c} ${f} ${v} / ${d}`
+  const color = new Color('#ff8252')
+  const darker = brightness(color,50) //50% of total bright
 ```
 
-* ***Base color -*** It's the color that will generate the others.
+### Saturate
 
-* ***Function -*** It's the function that will be used to generate all colors.
 
-* ***Value -*** It can be other color in different cases, it will be used by the function as a parameter.
-
-* ***Division -*** It's the number of colors that will be generated.
-
+```js
+  const color = new Color('#ff8252')
+  const darker = saturate(color,50) //50% of saturation
+```
 <br><br>
 
-### Functions:
+## Palletes
+
+### Additive [Comming son]
+
 
 ```js
-additive = '^' // additive(color1,value,division)
-diffBetween = '~' // diffBetween(color1,color2,division) 
+  const color = new Color('#ff8252')
+  const pallete = additive(color,30,10) // => [...Color x 10]
 ```
-## Other ways to use
 
-### With js array:
+### Difference Between [Comming son]
+
 
 ```js
-import gen from 'yotum/src/genColor.mjs';
-
-
-const colors = [
-    { name:'blue',command:"#00f ^ 50 / 5" },
-    { name:'green',command:"#0f0 ^ 50 / 5" },
-    { name:'red',command:"#f00 ^ 50 / 5" }
-    ];
-
-console.log(gen(colors));
-```
-Output:
-```json
-{
-  blue: [ '6464ff', '3232ff', '0000ff', '0000cd', '00009b' ],
-  green: [ '64ff64', '32ff32', '00ff00', '00cd00', '009b00' ],
-  red: [ 'ff6464', 'ff3232', 'ff0000', 'cd0000', '9b0000' ]
-}
+  const color1 = new Color('#ff8252')
+  const color2 = new Color('#0022ff')
+  const pallete = diffBetween(color1,color2,10) // => [...Color x 10]
 ```
 
-<br><br>
-### With directly functions:
+### Square [Comming son]
+
 
 ```js
-import additive from 'yotum/src/additive.mjs';
-import { matrixToHex } from 'yotum/src/lib/matrix.mjs';
-
-const yellow = additive('ff0',40,5)
-.map(each=>{return matrixToHex(each)}) //if you want a hex return
-
-console.log(yellow);
-```
-Output:
-```json
-[ 'ffff50', 'ffff28', 'ffff00', 'd7d700', 'afaf00' ]
+  const color = new Color('#ff8252')
+  
+  const pallete = square(color1,50) // => [...Color x 4]
 ```
 <br><br>
 ## Author

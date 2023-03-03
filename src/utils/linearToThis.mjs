@@ -1,4 +1,4 @@
-import Color from "../lib/Color.mjs";
+import Color from "../lib/Color.mjs"
 
 export default function saturate(color=Color.prototype,value=Number.prototype){
     let v = 100 - value
@@ -21,5 +21,4 @@ export default function saturate(color=Color.prototype,value=Number.prototype){
     addRgb[indexSorted[1]] = rgb[indexSorted[1]] +  (rgb[indexSorted[0]] - rgb[indexSorted[1]])/100 * v
     addRgb[indexSorted[2]] = rgb[indexSorted[2]] +  (rgb[indexSorted[0]] - rgb[indexSorted[2]])/100 * v
     
-    return new Color(addRgb)
 }

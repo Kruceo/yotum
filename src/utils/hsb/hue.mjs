@@ -79,8 +79,6 @@ export default function hue(color = Color, rot = Number) {
     let newColor = new Color(result)
     newColor = saturate(newColor, strn)
     newColor = brightness(newColor,brgt)
-
-    console.log(strn,brgt)
     // const brightned = brightness(saturated,brgt)
     // const brigth = brightness(saturated, 99)
     return newColor

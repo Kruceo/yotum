@@ -7,7 +7,6 @@ export default function getbrightness(color= Color.prototype){
 
     let diff =  rgb[indexSorted[0]] 
     let percent = parseInt(diff* 100/255)
-    console.log(percent)
 
     return percent
 }

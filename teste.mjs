@@ -1,10 +1,10 @@
 import Color from "./src/lib/Color.mjs";
 import { square } from "./src/palletes/square.mjs";
+import brightness from "./src/utils/bright.mjs";
 import hue from "./src/utils/hsb/hue.mjs";
 // import saturate from "./src/utils/linearToThis.mjs";
 import saturate from "./src/utils/saturate.mjs";
-//18 26 41
-let c = new Color('#ff1010')
+let c = new Color('#00ff00')
 let slider = document.createElement('input')
 let mess = document.createElement('h2')
 mess.style.color = 'white'
@@ -22,7 +22,7 @@ slider.addEventListener('change',(e)=>{
 slider.value = 100
 
 setInterval(() => {
-    let hues = saturate(c,slider.value)
+    let hues = brightness(c,slider.value)
     mess.innerHTML = hues.hex + '  ' + slider.value+"  "+ ((slider.value * 1.666666) / 100)
     mess.style.background = '#' + hues.hex 
     css.style.filter = "hue-rotate("+slider.value + "deg)"

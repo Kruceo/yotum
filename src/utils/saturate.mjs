@@ -15,7 +15,6 @@ export default function saturate(color=Color.prototype,value=Number.prototype){
 
         if(!indexSorted.includes(fkrgb.indexOf(each)))
         {
-            console.log(1)
             indexSorted.push(fkrgb.indexOf(each))
         }
        

@@ -1,66 +1,45 @@
-import Color from "./src/lib/Color.mjs";
-import { square } from "./src/palletes/square.mjs";
-import brightness from "./src/utils/brightness.mjs";
-import hue from "./src/utils/hsb/hue.mjs";
-// import saturate from "./src/utils/linearToThis.mjs";
-import saturate from "./src/utils/saturate.mjs";
-let c = new Color('#20f')
-let slider = document.createElement('input')
-document.body.appendChild(slider)
-slider.max = 360
-slider.value = 0
-slider.style.width =  100+ '%'
-slider.type = 'range'
+import Color from "./src/lib/Color.mjs"
+import hue from "./src/utils/hsb/hue.mjs"
+import square from './src/palletes/square.mjs'
+import additive from "./src/palletes/additive.mjs"
 
-let slider1 = document.createElement('input')
-document.body.appendChild(slider1)
-slider1.max = 100
-slider1.value = 0
-slider1.style.width =  100+ '%'
-slider1.type = 'range'
+let wheelframe = document.querySelector('#wheel')
+let pointer = document.querySelector('#pointer')
 
-let slider2 = document.createElement('input')
-document.body.appendChild(slider2)
-slider2.max = 100
-slider2.value = 0
-slider2.style.width =  100+ '%'
-slider2.type = 'range'
+let saturationPoiter = pointer.querySelector('p')
 
-let mess = document.createElement('h2')
-mess.style.color = 'white'
-let css = document.querySelector('#huecss')
-css.style.background = "#"+c.hex
+let pointers = []
 
+let img = document.querySelector('img')
+let c = new Color('#f0f')
+img.style.filter = "brightness("+ c.hsb.brightness+'%)'
 
-document.body.appendChild(mess)
+additive(c,40,5).forEach(each => {
+    console.log(each)
+    let np = pointer.cloneNode(true)
+    let sp = np.querySelector('#saturation')
+    pointers.push(np)
+    wheelframe.appendChild(np)
+    np.style.top = img.clientHeight / 2 - 35 + 'px'
+    np.style.left = img.clientWidth / 2 - 22 + 'px'
+    sp.style.left =
+        (((img.clientWidth / 2) * each.hsb.saturation) / 100) + 'px'
+    
 
-slider.value = 0
-slider1.value = 100
-slider2.value = 100
-
-setInterval(() => {
-    let hues = hue(c,slider.value)
-    hues = saturate(hues,slider1.value)
-    hues = brightness(hues,slider2.value)
-    mess.innerHTML = hues.hex + '  ' + slider.value+"  "+ ((slider.value * 1.666666) / 100)
-    mess.style.background = '#' + hues.hex 
-    css.style.filter = "hue-rotate("+slider.value + "deg)"
-}, 1000/1);
+    let pallete = document.createElement('div')
+    document.body.appendChild(pallete)
+    pallete.innerText = '#\n#'
+    pallete.style.background = '#'+each.hex
+    setInterval(() => {
 
 
-square(c,0).slice(0,180).forEach((each,index)=>{
-    const e = document.createElement('div')
-    e.style.width = '100px'
-    e.style.background = "#"+each.hex
-    document.body.querySelector('#c1').append(e)
-    e.innerHTML =(index+"").padStart(2,0) + ' - '+ each.hex
-})
-square(c,0).slice(180,720).forEach((each,index)=>{
-    const e = document.createElement('div')
-    e.style.width = '100px'
-    e.style.background = "#"+each.hex
-    document.body.querySelector('#c2').append(e)
-    e.innerHTML =(index+"").padStart(2,0) + ' - '+ each.hex
+        np.style.transform = "rotateZ(" + -each.hsb.hue + "deg)"
+
+        sp.style.background = '#' + each.hex
+
+        l += 10
+    }, 1000 / 5);
 })
 
-console.log(new Color('#0f08'))
+let l = 0
+pointer.style.display = 'none'

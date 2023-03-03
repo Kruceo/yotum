@@ -36,5 +36,10 @@ export function matrixCorrector(matrix){
     if(!matrix[3] || Number.isNaN(matrix[3])){
         newMatrix[3] = 1
     }
+
+    newMatrix = newMatrix.map(each=>{
+        if(each > 255) return 255
+        return each
+    })
     return newMatrix
 }

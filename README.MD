@@ -12,22 +12,22 @@
 <br>
 <br>
 
-## Introduction
+## **Introduction**
 
 Yotum as created for generate automatic color palletes with js.
 <br><br>
-## Technologies
+## **Technologies**
 
 * Javascript
 
 <br><br>
-## Installation
+## **Installation**
 ```
 npm install -g kruceo/yotum
 
 ```
 <br><br>
-## Getting started
+## **Getting started**
 
 ### Creating color
 
@@ -50,7 +50,7 @@ output:
 ```
 <br><br>
 
-## Filters
+## **Mixing**
 
 ### Brightness
 
@@ -69,9 +69,9 @@ output:
 ```
 <br><br>
 
-## Palletes
+## **Palletes**
 
-### Additive [Comming son]
+### Additive [Comming soon]
 
 
 ```js
@@ -79,7 +79,7 @@ output:
   const pallete = additive(color,30,10) // => [...Color x 10]
 ```
 
-### Difference Between [Comming son]
+### Difference Between [Comming soon]
 
 
 ```js
@@ -88,7 +88,7 @@ output:
   const pallete = diffBetween(color1,color2,10) // => [...Color x 10]
 ```
 
-### Square [Comming son]
+### ***Square:***
 
 
 ```js

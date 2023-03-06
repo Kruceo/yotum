@@ -1,6 +1,6 @@
 import Color from "../lib/Color.mjs";
 
-export default function saturate(color=Color.prototype,value=Number.prototype){
+export default function saturation(color=Color.prototype,value=Number.prototype){
 
     let v = 100 - value
     if(v == 100)return new Color("FFF")

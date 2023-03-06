@@ -87,12 +87,12 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 ```
 
 
-### Saturate
+### Saturation
 
 
 ```js
   const color = new Color('#ff8252')
-  const darker = saturate(color,50) //Color with 50% of original saturation
+  const darker = saturation(color,50) //Color with 50% of original saturation
 ```
 
 ### Hue rotation
@@ -101,6 +101,14 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 ```js
   const color = new Color('#ff8252')
   const darker = hue(color,130) //Color with 130° addition to hue rotation
+```
+
+### Invert
+
+
+```js
+  const color = new Color('#ff8252')
+  const inverted = invert(color) //inverse color of the original
 ```
 <br><br>
 

@@ -35,7 +35,7 @@ npm install -g kruceo/yotum
 import Color from 'yotum'
 
 const red = new Color('#f00')
-const green = new Color('#0f08') //with alpha
+const green = new Color('#0f08') // with alpha
 const blue = new Color([0,0,255]) // with RGB
 
 console.log(red.rgb)
@@ -57,9 +57,7 @@ The constructor accepts hex and rgb, both with alpha support.
 
 ### Internal color systems
 * RGB
-* RGBA
 * Hex
-* HexAlpha
 * HSB
 
 ```js
@@ -122,7 +120,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
   const pallete = additive(color,25,5) // => [Color x 5]
 ```
 
-### Difference Between [Comming soon]
+### Difference Between
 
 
 ```js

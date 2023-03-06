@@ -39,5 +39,17 @@ export default class Color {
             saturation:getSaturation(this)
         }
     }
+    get hsba() {
+
+        return {
+            hue:getHue(this),
+
+            brightness:getbrightness(this),
+
+            saturation:getSaturation(this),
+
+            alpha: this.rgba[3]*100
+        }
+    }
 
 }

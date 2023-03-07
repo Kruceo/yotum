@@ -81,7 +81,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const darker = brightness(color,50) // => Color with 50% of original bright
+  const darker = brightness(color,50) //Color with 50% of original bright
 ```
 
 
@@ -106,7 +106,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const inverted = invert(color) //inverse color of the original
+  const inverted = invert(color) //Inverse color of the original
 ```
 <br><br>
 

@@ -18,7 +18,7 @@ export default function hue(color = Color, rot = Number) {
     const strn = getSaturation(color)
     
     let addRGB = [0, 0, 0]
-    let coef = (rotation * 1.6) / 100
+    let coef = (rotation * 1.6666666666666667) / 100
 
 
     if (coef >= 0 && coef < 1) {

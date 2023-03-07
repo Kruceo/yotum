@@ -1,51 +1,71 @@
-import Color from "./src/lib/Color.mjs"
-import hue from "./src/utils/hsb/hue.mjs"
-import square from './src/palletes/square.mjs'
-import additive from "./src/palletes/additive.mjs"
-import diffBetween from "./src/palletes/differenceBetween.mjs"
-import invert from "./src/utils/invert.mjs"
+import Color from "./src/lib/Color.mjs";
+import square from "./src/palletes/square.mjs";
+import brightness from "./src/utils/brightness.mjs";
+import geometricHue from "./src/utils/geometricHue.mjs";
+import getHue from "./src/utils/hsb/getHue.mjs";
+import { getSaturation } from "./src/utils/hsb/getSaturation.mjs";
+import hue from "./src/utils/hsb/hue.mjs";
 
-let wheelframe = document.querySelector('#wheel')
-let pointer = document.querySelector('#pointer')
+import saturation from "./src/utils/saturate.mjs";
 
-let saturationPoiter = pointer.querySelector('p')
+let slider = document.querySelector('#range')
+let colorbox = document.querySelector('#color')
+let c = new Color('#0ff')
+slider.value =237.00000000000057
+slider.min = 0
+slider.max = 360
+setInterval(() => {
+    let hued = geometricHue(c, slider.value)
+    colorbox.innerHTML = '#' + hued.hex + ' ' + slider.value + ' ' + slider.value * 1.94 / 100
+    colorbox.style.background = '#' + hued.hex
 
-let pointers = []
+}, 1500);
+square(c, 4).forEach(each => {
+    let e = document.createElement('div')
+    document.body.append(e)
 
-let img = document.querySelector('img')
-let c = new Color('#2f22')
-let b = new Color('#f222')
+    e.style.background = "#" + each.hex
+    e.innerHTML = each.hex
+    let frame = document.querySelector('#wheel')
+    let img = frame.querySelector('img')
+    let pointer = frame.querySelector('#pointer').cloneNode(true)
+    let sat = pointer.querySelector('#saturation')
+    frame.appendChild(pointer)
 
-console.log(invert(c))
-img.style.filter = "brightness("+ c.hsb.brightness+'%)'
-console.log(c.rgba)
-console.log(hue(c,180))
 
-diffBetween(c,b,10).forEach(each => {
-    console.log(each)
-    let np = pointer.cloneNode(true)
-    let sp = np.querySelector('#saturation')
-    pointers.push(np)
-    wheelframe.appendChild(np)
-    np.style.top = img.clientHeight / 2 - 35 + 'px'
-    np.style.left = img.clientWidth / 2-10 + 'px'
-    sp.style.left =
-        (((img.clientWidth / 2) * each.hsb.saturation) / 100) + 'px'
+    sat.style.padding = '10px'
+    sat.style.borderRadius = '100%'
+    sat.style.border = '1px black solid'
+    pointer.style.position = 'absolute'
+    // pointer.innerHTML = '-%'
+    pointer.style.left = img.clientWidth / 2 -8 + 'px'
+    pointer.style.top = img.clientWidth  / 2 +8+ 'px'
+    sat.style.position = 'absolute'
+    sat.style.left = (getSaturation(each) * (img.clientWidth / 2) / 100) + 'px'
+
+    let rot = each.hsb.hue
+    let add = 0
+
     
+    for (let i = 0; i < rot; i++) {
 
-    let pallete = document.createElement('div')
-    document.body.appendChild(pallete)
-    pallete.innerText = '#'+each.hexAplha
-    pallete.style.background = '#'+each.hex
-    setInterval(() => {
+        let ch = each
+        if (i > 0 && i < 60) add += 2.15
+        if (i <= 300 && i >= 60) add += 0.85
+        if (i <= 360 && i >= 300) add += 0.45
+        if (i > 360) rot -= 360
+        pointer.style.transform = 'rotateZ(-' + (add) + 'deg)'
+        sat.style.background = '#' + ch.hex
+    }
 
 
-        np.style.transform = "rotateZ(" + -each.hsb.hue + "deg)"
 
-        sp.style.background = '#' + each.hex
 
-    }, 1000 / 5);
+
+
+
+
+
+    // console.log(rot,add)
+
 })
-
-// let l = 0
-// pointer.style.display = 'none'

@@ -66,8 +66,8 @@ const color = new Color('f00f')
 console.log(color.rgb) // return [255,0,0]
 console.log(color.rgba) // return [255,0,0,1]
 
-console.log(color.hex) //return "f00"
-console.log(color.hexAlpha) //return "f00f"
+console.log(color.hex) //return "ff0000"
+console.log(color.hexAlpha) //return "ff0000f"
 
 console.log(color.hsb)  //return { hue:0, brightness:100, saturation:100 }
 console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha:100 }
@@ -90,7 +90,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const darker = saturation(color,50) //Color with 50% of original saturation
+  const saturated = saturation(color,50) //Color with 50% of original saturation
 ```
 
 ### Hue rotation
@@ -98,7 +98,16 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const darker = hue(color,130) //Color with 130° addition to hue rotation
+  const newColor = hue(color,130) //Color with 130° addition to hue rotation
+```
+
+
+### Geometric hue rotation ***(Experiment)***
+
+
+```js
+  const color = new Color('#f00')
+  const newColor = geometricHue(color,90) //the rotation added is sync with color wheel.
 ```
 
 ### Invert
@@ -129,7 +138,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
   const pallete = diffBetween(color1,color2,10) // => [Color x 10]
 ```
 
-### Square
+### Square ***(Experiment)***
 
 
 ```js

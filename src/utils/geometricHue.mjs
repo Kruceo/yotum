@@ -1,6 +1,8 @@
 import Color from "../lib/Color.mjs"
+import brightness from "./brightness.mjs"
 import getGeometricHue from "./getGeometricHue.mjs"
 import hue from "./hsb/hue.mjs"
+import saturation from "./saturate.mjs"
 
 export default function geometricHue(color = Color.prototype, value = Number.prototype) {
     let rot = value + getGeometricHue(color)
@@ -14,13 +16,10 @@ export default function geometricHue(color = Color.prototype, value = Number.pro
         if (k > 60 && k < 100) add += 0.5
         if (k > 100 && k < 300) add += 1.1
         if (k > 300 && k < 360) add += 1.5
-        // if (k > 120 && k < 360) add += 1
-        // if (k <= 360 && k >= 300) add += 2
-        // if (k > 360) rot -= 360
-        // if (k <= 360 && k >= 300) add += 1
-        // if (k >  360) rot -= 360
-
     }
-   
-    return hue(new Color('f00'),add )
+    let newColor = new Color('f00')
+    newColor = hue(newColor,add)
+    newColor = saturation(newColor,color.hsb.saturation)
+    newColor = brightness(newColor,color.hsb.brightness)
+    return newColor
 }

@@ -1,0 +1,24 @@
+{
+  "name": "yoken",
+  "version": "0.13.3",
+  "description": "Color palletes manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kruceo/yotum.git"
+  },
+  "keywords": [
+    "color",
+    "js",
+    "pallete"
+  ],
+  "author": "Kruceo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kruceo/yotum/issues"
+  },
+  "homepage": "https://github.com/Kruceo/yotum#readme"
+}

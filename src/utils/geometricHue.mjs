@@ -3,11 +3,11 @@ import getGeometricHue from "./getGeometricHue.mjs"
 import hue from "./hsb/hue.mjs"
 
 export default function geometricHue(color = Color.prototype, value = Number.prototype) {
-    let rot = value
+    let rot = value + getGeometricHue(color)
 
     rot -= parseInt(rot / 360) * 360
     let add = 0
-    console.log(getGeometricHue(color))
+   
     for (let k = 0; k < rot; k++) {
 
         if (k > 0 && k < 60) add += 0.5
@@ -22,5 +22,5 @@ export default function geometricHue(color = Color.prototype, value = Number.pro
 
     }
    
-    return hue(new Color('f00'),add)
+    return hue(new Color('f00'),add )
 }

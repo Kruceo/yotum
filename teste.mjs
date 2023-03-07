@@ -2,6 +2,7 @@ import Color from "./src/lib/Color.mjs";
 import square from "./src/palletes/square.mjs";
 import brightness from "./src/utils/brightness.mjs";
 import geometricHue from "./src/utils/geometricHue.mjs";
+import getGeometricHue from "./src/utils/getGeometricHue.mjs";
 import getHue from "./src/utils/hsb/getHue.mjs";
 import { getSaturation } from "./src/utils/hsb/getSaturation.mjs";
 import hue from "./src/utils/hsb/hue.mjs";
@@ -10,16 +11,17 @@ import saturation from "./src/utils/saturate.mjs";
 
 let slider = document.querySelector('#range')
 let colorbox = document.querySelector('#color')
-let c = new Color('#0ff')
-slider.value =237.00000000000057
+let c = new Color('#f00')
+slider.style.width = '100%'
+slider.value = 360
 slider.min = 0
 slider.max = 360
 setInterval(() => {
     let hued = geometricHue(c, slider.value)
-    colorbox.innerHTML = '#' + hued.hex + ' ' + slider.value + ' ' + slider.value * 1.94 / 100
+    colorbox.innerHTML = '#' + hued.hex + '||| gh:' + slider.value + ' ||| H:' + hued.hsb.hue
     colorbox.style.background = '#' + hued.hex
-
-}, 1500);
+    console.log(getGeometricHue(hued))
+}, 1000/10);
 square(c, 4).forEach(each => {
     let e = document.createElement('div')
     document.body.append(e)

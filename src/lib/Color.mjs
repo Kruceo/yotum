@@ -1,7 +1,6 @@
 import getbrightness from "../utils/hsb/getBrightness.mjs"
 import getHue from "../utils/hsb/getHue.mjs"
 import { getSaturation } from "../utils/hsb/getSaturation.mjs"
-import saturate from "../utils/saturate.mjs"
 import { hexToMatrix, matrixCorrector, matrixToHex } from "./matrix.mjs"
 
 export default class Color {

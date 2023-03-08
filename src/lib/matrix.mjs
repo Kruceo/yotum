@@ -1,4 +1,9 @@
-export function hexToMatrix(hexColor=String) {
+/**
+ * Transform a hex string to RGBA array.
+ * @param {string} hexColor - The hex value to be transformed.
+ * @returns {Array} RGB Array.
+ */
+export function hexToMatrix(hexColor=String.prototype) {
 
     let divisor = (hexColor.length / 3)
     if(!Number.isInteger(divisor))divisor = parseInt(divisor) 
@@ -17,8 +22,12 @@ export function hexToMatrix(hexColor=String) {
     
     return rgb
 }
-
-export function matrixToHex(matrix=Array){
+/**
+ * Transform rgba matrix to hex.
+ * @param {Array} matrix - RGBA array to be transformed. 
+ * @returns {String} Hexadecimal string.
+ */
+export function matrixToHex(matrix=Array.prototype){
    
     let newMatrix = [parseInt(matrix[0]),parseInt(matrix[1]),parseInt(matrix[2]),matrix[3]??1]
    
@@ -31,7 +40,13 @@ export function matrixToHex(matrix=Array){
     result[3]
     return result
 }
-export function matrixCorrector(matrix){
+
+/**
+ * Fix the array, things like values ​​greater than 255 or less than 0, and not alpha value included.
+ * @param {Number[]} matrix 
+ * @returns Number[]
+ */
+export function matrixCorrector(matrix = Array.prototype){
     let newMatrix = [...matrix]
     if(!matrix[3] || Number.isNaN(matrix[3])){
         newMatrix[3] = 1

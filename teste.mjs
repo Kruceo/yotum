@@ -1,4 +1,5 @@
 import Color from "./src/lib/Color.mjs";
+import compost from "./src/palletes/compost.mjs";
 import square from "./src/palletes/square.mjs";
 import geometricHue from "./src/utils/geometricHue.mjs";
 import getGeometricHue from "./src/utils/getGeometricHue.mjs";
@@ -9,7 +10,7 @@ import saturation from "./src/utils/saturate.mjs";
 let slider = document.querySelector('#range')
 let colorbox = document.querySelector('#color')
 let colorbox1 = document.querySelector('.color2')
-let c = new Color('#ff8')
+let c = new Color('#f82')
 
 slider.style.width = '100%'
 slider.value = 19
@@ -21,7 +22,7 @@ setInterval(() => {
     colorbox1.style.filter= 'hue-rotate('+slider.value+'deg)'
     colorbox.style.background = '#' + hued.hex
 }, 1000);
-square(c, 5,50).forEach(each => {
+compost(c, 5,50).forEach(each => {
     let e = document.createElement('div')
     document.body.append(e)
 

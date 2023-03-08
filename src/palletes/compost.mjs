@@ -1,24 +1,33 @@
 import Color from "../lib/Color.mjs"
-import { hexToMatrix, matrixToHex } from "../lib/matrix.mjs"
 import brightness from "../utils/brightness.mjs"
-import hue from "../utils/hsb/hue.mjs"
+import geometricHue from "../utils/geometricHue.mjs"
+import saturation from "../utils/saturate.mjs"
 
-export default function compost(color = Color.prototype, division = Number.prototype) {
-    let c = color
-    let results = []
+/**
+ * Creates a pallete based in compost system.
+ * @param {Color} color - Base color to init.
+ * @param {number} division - Number of colors to be returned.
+ * @param {number} saturationPerRound - Value to be decreased from total saturation per round.
+ * @returns {Color[]} Color pallete.
+ */
+export default function compost(color = Color.prototype, division = Number.prototype,saturationPerRound = Number.prototype) {
+    const c = color
+    const results = []
+    let sat = 100
+    const degrees = [0,37,164,164-19]
+    for (let i = 0; i < division; i++) {
 
-    let color1 = hue(c, 170)
-    let color2 = hue(c, 170-15)
+        let index = i - parseInt(i/4)*4
+        let newColor = c
+        if(index != 0)
+        newColor = geometricHue(c, degrees[index])
 
-    color2 = brightness(color2,80)
-
-    let color3 = c
-    let color4 = hue(c, 20)
-
-    color4 = brightness(color4,62)
-    results.push(color1)
-    results.push(color2)
-    results.push(color3)
-    results.push(color4)
+        newColor = saturation(newColor,sat)
+        results.push(newColor)
+        if(index == 3)
+        sat -= saturationPerRound??35
+       
+    }
+   
     return results
 }

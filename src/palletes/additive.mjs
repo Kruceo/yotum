@@ -1,10 +1,16 @@
 import Color from "../lib/Color.mjs";
 
+/**
+ * Creates a color pallete with addition system.
+ * @param {Color} color - Base color to init.
+ * @param {number} add - Value to be increased in color.
+ * @param {number} division - Number of colors to be returned.
+ * @returns {Color[]}Color pallete. 
+ */
+export default function additive(color=Color.prototype,add,division=Number.prototype){
 
-export default function additive(color=Color,add,times){
-
-    const timeAdd = parseInt(times/2)
-    const timeSub = times - timeAdd
+    const timeAdd = parseInt(division/2)
+    const divisionub = division - timeAdd
     let rgb = color.rgb
     let results = []
     for (let i = 1; i <= timeAdd; i++) {
@@ -16,7 +22,7 @@ export default function additive(color=Color,add,times){
         results.push(new Color(result))
     }
     results = results.reverse()
-    for (let i = 0; i < timeSub; i++) {
+    for (let i = 0; i < timeAdd; i++) {
         let result = [...rgb]
         result[0] -= add * i
         result[1] -= add * i

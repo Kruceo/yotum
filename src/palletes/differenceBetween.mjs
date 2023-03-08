@@ -1,6 +1,11 @@
 import Color from "../lib/Color.mjs"
-import { hexToMatrix, matrixToHex } from "../lib/matrix.mjs"
-
+/**
+ * Creates a color palette that switches between one color and another smoothly.
+ * @param {Color} color1 - The init color.
+ * @param {Color} color2 - The end color.
+ * @param {number} division - Number of colors to be returned.
+ * @returns {Color[]} Color pallete.
+ */
 export default function diffBetween(color1=Color.prototype, color2=Color.prototype,division=Number.prototype) {
     let results = []
     let rgb1 = color1.rgba

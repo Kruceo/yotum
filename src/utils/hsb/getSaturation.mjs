@@ -1,5 +1,9 @@
 import Color from "../../lib/Color.mjs";
-
+/**
+ * Returns the saturation (HSB) value.
+ * @param {Color} color - Color to get the saturation value.
+ * @returns {number} saturation.
+ */
 export function getSaturation(color = Color.prototype) {
     let rgb = color.rgb
     const sorted = color.rgb.sort((a, b) => b - a)

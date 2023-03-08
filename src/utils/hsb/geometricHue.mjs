@@ -1,7 +1,7 @@
-import Color from "../lib/Color.mjs"
+import Color from "../../lib/Color.mjs"
 import brightness from "./brightness.mjs"
 import getGeometricHue from "./getGeometricHue.mjs"
-import hue from "./hsb/hue.mjs"
+import hue from "./hue.mjs"
 import saturation from "./saturate.mjs"
 
 /**
@@ -35,7 +35,7 @@ export default function geometricHue(color = Color.prototype, value = Number.pro
  * @param max - End of the chunk.
  * @param addition - coefficient to add per inner value between min and max.
  *  */
-function calcChunk(
+export function calcChunk(
     value=Number.prototype,
     min=Number.prototype,
     max=Number.prototype,

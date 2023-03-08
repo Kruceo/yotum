@@ -1,5 +1,10 @@
-import Color from "../lib/Color.mjs";
-
+import Color from "../../lib/Color.mjs";
+/**
+ * Adds saturation to color based in the 100% of the same saturation.
+ * @param {Color} color - Base color to init.
+ * @param {number} value - Percent of total color saturation.
+ * @returns {Color} Saturated color.
+ */
 export default function saturation(color=Color.prototype,value=Number.prototype){
 
     let v = 100 - value

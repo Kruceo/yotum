@@ -1,6 +1,6 @@
 import Color from "../lib/Color.mjs";
-import geometricHue from "../utils/geometricHue.mjs";
-import saturation from "../utils/saturate.mjs";
+import geometricHue from "../utils/hsb/geometricHue.mjs";
+import saturation from "../utils/hsb/saturate.mjs";
 /**
  * Create a square pallete. (90°)
  * @param {Color} baseColor - Base color to init.

@@ -1,12 +1,16 @@
 import Color from "../../lib/Color.mjs"
-import { hexToMatrix } from "../../lib/matrix.mjs"
-import brightness from "../brightness.mjs"
+import brightness from "./brightness.mjs"
 import getHue from "./getHue.mjs"
-import saturate from "../saturate.mjs"
+import saturate from "./saturate.mjs"
 import getbrightness from "./getBrightness.mjs"
 import { getSaturation } from "./getSaturation.mjs"
-
-export default function hue(color = Color, rot = Number) {
+/**
+ * Adds a rotation value to current color hue (HSB).
+ * @param {Color} color - Base color to init.
+ * @param {number} rot - Rotation in degrees.
+ * @returns {Color} Rotated hue color.
+ */
+export default function hue(color = Color.prototype, rot = Number.prototype) {
 
     let rgb = [...color.rgba]
     let result = [0, 0, 0, 0]

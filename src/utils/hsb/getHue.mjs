@@ -1,5 +1,9 @@
 import Color from "../../lib/Color.mjs";
-
+/**
+ * Returns the Hue rotation (HSB) value.
+ * @param {Color} color - Color to get the hue rotation value.
+ * @returns {number} Hue rotation.
+ */
 export default function getHue(color = Color.prototype || Array) {
     const [red, green, blue] = color.rgb
     const min = Math.min(...color.rgb)

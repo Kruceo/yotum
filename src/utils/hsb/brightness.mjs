@@ -1,5 +1,10 @@
-import Color from "../lib/Color.mjs";
-
+import Color from "../../lib/Color.mjs";
+/**
+ * Adds brightness to the color based in 100% of the same brightness.
+ * @param {Color} color - Base color to init.
+ * @param {number} value - Percent of total color brightness.
+ * @returns {Color} Darker or lighter color.
+ */
 export default function brightness(color = Color.prototype, value = Number.prototype) {
     let v = value
     let rgb = color.rgb

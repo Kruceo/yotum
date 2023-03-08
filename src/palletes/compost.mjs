@@ -1,7 +1,6 @@
 import Color from "../lib/Color.mjs"
-import brightness from "../utils/brightness.mjs"
-import geometricHue from "../utils/geometricHue.mjs"
-import saturation from "../utils/saturate.mjs"
+import geometricHue from "../utils/hsb/geometricHue.mjs"
+import saturation from "../utils/hsb/saturate.mjs"
 
 /**
  * Creates a pallete based in compost system.

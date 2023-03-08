@@ -1,6 +1,11 @@
 import Color from "../lib/Color.mjs";
 import { binToDec, decToBin, inverseBin } from "./binaries.mjs";
-
+/**
+ * Returns the inverse color of the base.
+ * Invert color bits.
+ * @param {Color} color - Base color to init. 
+ * @returns {Color} Inverted color.
+ */
 export default function invert(color=Color.prototype){
 
     let [r,g,b,a] =color.rgba

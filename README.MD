@@ -14,7 +14,7 @@
 
 ## **Introduction**
 
-Yotum as created for generate automatic color palletes with js.
+Yotum was created for generate automatic color palletes with js.
 <br><br>
 ## **Technologies**
 

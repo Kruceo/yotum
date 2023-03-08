@@ -12,7 +12,7 @@ let colorbox1 = document.querySelector('.color2')
 let c = new Color('#ff8')
 
 slider.style.width = '100%'
-slider.value = 100
+slider.value = 19
 slider.min = 0
 slider.max = 360
 setInterval(() => {
@@ -20,8 +20,7 @@ setInterval(() => {
     colorbox.innerHTML = '#' + hued.hex + '||| gh:' + slider.value + ' ||| H:' + hued.hsb.hue
     colorbox1.style.filter= 'hue-rotate('+slider.value+'deg)'
     colorbox.style.background = '#' + hued.hex
-    console.log(getGeometricHue(hued))
-}, 1000 / 10);
+}, 1000);
 square(c, 5,50).forEach(each => {
     let e = document.createElement('div')
     document.body.append(e)

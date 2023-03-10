@@ -10,7 +10,6 @@ import Color from "../lib/Color.mjs";
 export default function additive(color=Color.prototype,add,division=Number.prototype){
 
     const timeAdd = parseInt(division/2)
-    const divisionub = division - timeAdd
     let rgb = color.rgb
     let results = []
     for (let i = 1; i <= timeAdd; i++) {

@@ -143,7 +143,15 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const pallete = square(color1,8) // => [Color x 8]
+  const pallete = square(color1,8,25) // => [Color x 8]
+```
+
+### Triad
+
+
+```js
+  const color = new Color('#ff8252')
+  const pallete = triad(color1,4,25) // => [Color x 4]
 ```
 
 ### Analog

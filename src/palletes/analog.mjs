@@ -1,10 +1,10 @@
 import Color from '../lib/Color.mjs'
 import geometricHue from '../utils/hsb/geometricHue.mjs'
 /**
- * 
+ * Return a color pallete generated with analog system.
  * @param {Color} color - Base color to init. 
- * @param {*} degrees  - Rotation to add per round in degrees.
- * @param {*} divisions - Number of colors to be returned.
+ * @param {number} degrees  - Rotation to add per round in degrees.
+ * @param {number} divisions - Number of colors to be returned.
  * @returns {Color[]} Color pallete.
  */
 export default function analog(color = Color.prototype, degrees = Number.prototype, divisions = Number.prototype) {

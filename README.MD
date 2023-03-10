@@ -138,7 +138,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
   const pallete = diffBetween(color1,color2,10) // => [Color x 10]
 ```
 
-### Square ***(Experiment)***
+### Square
 
 
 ```js
@@ -146,6 +146,21 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
   const pallete = square(color1,8) // => [Color x 8]
 ```
 
+### Analog
+
+
+```js
+  const color = new Color('#ff8252')
+  const pallete = analog(color1,30,8) // => [Color x 8]
+```
+
+### Shades
+
+
+```js
+  const color = new Color('#ff8252')
+  const pallete = shades(color1,10,8) // => [Color x 8]
+```
 
 <br><br>
 ## Author

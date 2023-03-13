@@ -7,14 +7,13 @@ import geometricHue from '../utils/hsb/geometricHue.mjs'
  * @param {number?} divisions - Number of colors to be returned.
  * @returns {Color[]} Color pallete.
  */
-export default function divide(color, degrees, divisions) {
+export default function division(color, degrees, divisions) {
     let results = []
     let dvs = divisions??5
     let d = degrees??145
     const adds = [0,d,360-d]
     for (let i = 1; i <= dvs; i++) {
         let y = i - parseInt(i/3) * 3
-        console.log(y)
         results.push(geometricHue(color,adds[y]))
     }
     

@@ -143,7 +143,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const pallete = square(color1,8,25) // => [Color x 8]
+  const pallete = square(color,8,25) // => [Color x 8]
 ```
 
 ### Triad
@@ -151,7 +151,7 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const pallete = triad(color1,4,25) // => [Color x 4]
+  const pallete = triad(color,4,25) // => [Color x 4]
 ```
 
 ### Analog
@@ -159,7 +159,23 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 ```js
   const color = new Color('#ff8252')
-  const pallete = analog(color1,30,8) // => [Color x 8]
+  const pallete = analog(color,30,8) // => [Color x 8]
+```
+
+### Division
+
+
+```js
+  const color = new Color('#ff8252')
+  const pallete = division(color) // => [Color x 5]
+```
+
+### Double division
+
+
+```js
+  const color = new Color('#ff8252')
+  const pallete = doubleDivision(color) // => [Color x 5]
 ```
 
 ### Shades

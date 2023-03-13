@@ -7,7 +7,7 @@ import Color from "../lib/Color.mjs";
  * @param {number} division - Number of colors to be returned.
  * @returns {Color[]}Color pallete. 
  */
-export default function additive(color=Color.prototype,add,division=Number.prototype){
+export default function additive(color,add,division){
 
     const timeAdd = parseInt(division/2)
     let rgb = color.rgb

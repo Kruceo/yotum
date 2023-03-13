@@ -7,7 +7,7 @@ import geometricHue from '../utils/hsb/geometricHue.mjs'
  * @param {number} divisions - Number of colors to be returned.
  * @returns {Color[]} Color pallete.
  */
-export default function analog(color = Color.prototype, degrees = Number.prototype, divisions = Number.prototype) {
+export default function analog(color, degrees, divisions) {
     const timeAdd = parseInt(divisions / 2)
     let results = []
     for (let i = 1; i <= timeAdd; i++) {

@@ -9,7 +9,7 @@ import saturation from "../utils/hsb/saturate.mjs"
  * @param {number} saturationPerRound - Value to be decreased from total saturation per round.
  * @returns {Color[]} Color pallete.
  */
-export default function compost(color = Color.prototype, division = Number.prototype,saturationPerRound = Number.prototype) {
+export default function compost(color , division,saturationPerRound) {
     const c = color
     const results = []
     let sat = 100

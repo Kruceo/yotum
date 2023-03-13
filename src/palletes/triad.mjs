@@ -9,7 +9,7 @@ import saturation from "../utils/hsb/saturate.mjs";
  * @param {number} satPerRound - Saturation to add per round.
  * @returns 
  */
-export default function triad(color=Color.prototype,divisions=Number.prototype,satPerRound=Number.prototype){
+export default function triad(color,divisions,satPerRound){
 
     const result = []
     let saturationAddPerRound = satPerRound ?? 45

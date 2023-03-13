@@ -6,7 +6,7 @@ import Color from "../lib/Color.mjs"
  * @param {number} division - Number of colors to be returned.
  * @returns {Color[]} Color pallete.
  */
-export default function diffBetween(color1=Color.prototype, color2=Color.prototype,division=Number.prototype) {
+export default function diffBetween(color1, color2,division) {
     let results = []
     let rgb1 = color1.rgba
     let rgb2 = color2.rgba

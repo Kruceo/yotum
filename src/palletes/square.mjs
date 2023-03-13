@@ -4,11 +4,11 @@ import saturation from "../utils/hsb/saturate.mjs";
 /**
  * Create a square pallete. (90°)
  * @param {Color} baseColor - Base color to init.
- * @param {*} divisions - Number of colors to be returned.
- * @param {*} saturationPerRound - Every 360 degrees, this value is removed from total saturation of the initial color.
+ * @param {number} divisions - Number of colors to be returned.
+ * @param {number} saturationPerRound - Every 360 degrees, this value is removed from total saturation of the initial color.
  * @returns {Color[]} Color pallete.
  */
-export default function square(color = Color.prototype, divisions = Number.prototype, saturationPerRound) {
+export default function square(color, divisions , saturationPerRound) {
 
     const result = []
     let saturationAddPerRound = saturationPerRound ?? 20

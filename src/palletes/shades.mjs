@@ -8,7 +8,7 @@ import brightness from "../utils/hsb/brightness.mjs";
  * @param {*} divisions  - Number of colors to be returned.
  * @returns {Color[]} Color pallete.
  */
-export default function shades(color=Color.prototype,brgt=Number.prototype,divisions){
+export default function shades(color,brgt,divisions){
     let results = []
     for (let i = 0; i < divisions??5; i++) {
         const newColor = brightness(color,100-i*(brgt??10))

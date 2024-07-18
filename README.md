@@ -188,4 +188,4 @@ console.log(color.hsba)  //return { hue:0, brightness:100, saturation:100, alpha
 
 <br><br>
 ## Author
-Visit Kruceo website for more projects: <a href='https://home.kruceo.com'>home.kruceo.com
+Visit Kruceo website for more projects: <a href='https://kruceo.com'>kruceo.com
